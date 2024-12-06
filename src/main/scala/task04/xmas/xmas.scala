@@ -3,24 +3,14 @@ package task04.xmas
 @main
 def main(): Unit = {
 
-  val word = "XMAS"
-  val wordReversed = word.reverse
-
   val wordRegexp = raw"XMAS".r
   val revWordRegexp = raw"SAMX".r
-
-  //  io.Source.stdin.getLines
-  //    .foreach(l => {
-  //      print(s"$l ")
-  //      println(s"${l.contains(word)} ${l.contains(wordReversed)}")
-  //    })
 
   val lines = io.Source.stdin.getLines
     .toArray
     .map(str => str.toArray)
 
   val linesSize = lines.size
-//  val linesLen = lines.map(_.size).foldLeft(0)(Math.max)
 
   val columns = lines.transpose
 
@@ -41,12 +31,5 @@ def main(): Unit = {
 
   println(count(lines) + count(columns) +
     count(diagonals1) + count(diagonals2))
-
-  //    lines.foreach(l => {
-  //      print(s"$l ")
-  //
-  //      println(s"${wordRegexp.findAllIn(l).size + revWordRegexp.findAllIn(l).size}")
-  //    })
-
 
 }
